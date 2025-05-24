@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+<h1>Study Planner</h1>
+  </head>
+  <body>
+
+<p> 이 웹은 타이머, 사전, 플래너의 기능이 있는 간단한 학습 웹입니다.</p>
+<p> (학교 수행평가 용도로 만들었습니다.) </p>
+
+<h2> Planner </h2>
+<p> 아래 플래너에 공부 계획을 적어보세요 </p>
+<input type="text" id="planner_input" placeholder="공부 계획을 적어보세요!" />
+<button onclick="add_planner()">추가</button>
+
+<ul id="planner"></ul>
+
+  <script>
+    function add_planner() {
+      const input = document.getElementById("planner_input");
+      const text = input.value.trim();
+      if (text === "") return;
+
+      const li = document.createElement("li");
+      li.textContent = text;
+      document.getElementById("planner").appendChild(li);
+      input.value = "";
+    }
+  </script>
+  
+  <h2> Dictionary </h2>
+  <p> 아래 사전은 공부하는 동안 궁금한 단어에 대해서 검색하는 사전입니다.</p>
+    <iframe src="https://dict.naver.com/" width="40%" height="500px" >
+</iframe> 
+
+  <h2> Timer </h2>
+  <p> 아래는 공부할 시간을 측정할 타이머입니다. </p>
+    <iframe src="https://vclock.kr/embed/stopwatch/" width="40%" height="500px">
+</iframe>
+
+
+<img src=""/>
+  </body>
+</html>
